@@ -34,8 +34,10 @@ services:
   phpmyadmin:
     image: phpmyadmin
     restart: unless-stopped
+    network_mode: service:db
     environment:
-      PMA_HOST: db
+      PMA_HOST: 127.0.0.1
+      APACHE_PORT: 8081
     depends_on:
       - db
   

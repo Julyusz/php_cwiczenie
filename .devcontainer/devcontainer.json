@@ -10,11 +10,11 @@
 	// "features": {},
 
 	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
-	"forwardPorts": [8080, 3306, "phpmyadmin:80"],
+	"forwardPorts": [8000, 3306, 8081],
+	"postStartCommand": "nohup php -S 0.0.0.0:8000 -t /workspaces/php_cwiczenie > /tmp/php8000.log 2>&1 &",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html",
-	"postStartCommand": "sudo apache2ctl start"
+	"postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
 	// Configure tool-specific properties.
 	// "customizations": {},
 
