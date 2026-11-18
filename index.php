@@ -36,7 +36,7 @@ $wynik = mysqli_query($conn, "SELECT * FROM wpisy");
         <?php endwhile; ?>
     </table>
 
-    <footer><p>Autor: Twoje Imię i Nazwisko</p></footer>
+    <footer><p>Autor: <b>Juliusz Sowiński</b></p></footer>
 </body>
 </html>
 <?php mysqli_close($conn); ?>
